@@ -37,6 +37,9 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 // TODO: Implement login logic
                 Toast.makeText(this, "Logging in...", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, FeedActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 
@@ -45,9 +48,10 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        forgotPassword.setOnClickListener(view ->
-                Toast.makeText(this, "Forgot password clicked", Toast.LENGTH_SHORT).show()
-        );
+        forgotPassword.setOnClickListener( View -> {
+            Intent intent = new Intent(MainActivity.this, Forgotpw.class);
+            startActivity(intent);
+        });
 
         facebookBtn.setOnClickListener(view ->
                 Toast.makeText(this, "Facebook login coming soon", Toast.LENGTH_SHORT).show()

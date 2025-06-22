@@ -36,7 +36,8 @@
             android:background="@drawable/input_background"
             android:hint="👤 Full Name"
             android:padding="12dp"
-            android:textColorHint="#9B9393" />
+            android:textColorHint="#9B9393"
+            android:textColor="#888888"/>
 
         <EditText
             android:id="@+id/email"
@@ -47,7 +48,8 @@
             android:hint="✉️ Email Address"
             android:inputType="textEmailAddress"
             android:padding="12dp"
-            android:textColorHint="#9B9393" />
+            android:textColorHint="#9B9393"
+            android:textColor="#888888"/>
 
         <EditText
             android:id="@+id/phone"
@@ -58,7 +60,8 @@
             android:hint="📱 Phone Number"
             android:inputType="phone"
             android:padding="12dp"
-            android:textColorHint="#9B9393" />
+            android:textColorHint="#9B9393"
+            android:textColor="#888888"/>
 
         <EditText
             android:id="@+id/password"
@@ -69,7 +72,8 @@
             android:hint="🔒 Password"
             android:inputType="textPassword"
             android:padding="12dp"
-            android:textColorHint="#9B9393" />
+            android:textColorHint="#9B9393"
+            android:textColor="#888888"/>
 
         <EditText
             android:id="@+id/confirmPassword"

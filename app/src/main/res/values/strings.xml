@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">HelpLink</string>
+    <string name="discover_help_requests">Discover Help Requests</string>
+    <string name="search_hint">Search by location, category, or keyword</string>
+    <string name="nearby_requests">📍 Nearby Requests</string>
+    <string name="view_map">View Map</string>
+    <string name="urgent">🚨 URGENT</string>
+    <string name="verified">✅ VERIFIED</string>
+    <string name="emergency_surgery_fund">Emergency Surgery Fund</string>
+    <string name="school_supplies">School Supplies</string>
+    <string name="medical_category">Medical</string>
+    <string name="education_category">Education</string>
+    <string name="emergency_category">Emergency</string>
+    <string name="housing_category">Housing</string>
+    <string name="all_category">All</string>
+    <string name="feed_nav">Feed</string>
+    <string name="nearby_nav">Nearby</string>
+    <string name="profile_nav">Profile</string>
+    <string name="camera_nav">Camera</string>
+    <string name="km_away">%s km away</string>
+    <string name="amount_needed">$%s needed</string>
 </resources>

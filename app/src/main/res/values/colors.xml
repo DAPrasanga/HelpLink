@@ -2,4 +2,14 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="_333333">#333333</color>
+<color name="purple_primary">#7B68EE</color>
+<color name="purple_secondary">#9370DB</color>
+<color name="green_switch">#4CAF50</color>
+<color name="text_primary">#333333</color>
+<color name="text_secondary">#666666</color>
+<color name="background_light">#F5F5F5</color>
+<color name="card_background">#FFFFFF</color>
+<color name="border_color">#E0E0E0</color>
+    <color name="chip_unselected_text">#6B7280</color>
 </resources>
