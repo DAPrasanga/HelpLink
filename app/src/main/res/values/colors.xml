@@ -12,4 +12,13 @@
 <color name="card_background">#FFFFFF</color>
 <color name="border_color">#E0E0E0</color>
     <color name="chip_unselected_text">#6B7280</color>
+    <color name="primary_color">#6B73FF</color>
+    <color name="success_green">#4CAF50</color>
+    <color name="success_green_light">#81C784</color>
+    <color name="error_red">#F44336</color>
+    <color name="border_light">#E0E0E0</color>
+    <color name="primary_blue">#6C5CE7</color>
+    <color name="primary_green">#4CAF50</color>
+    <color name="background_gray">#F5F5F5</color>
+    <color name="red">#F44336</color>
 </resources>

@@ -3,10 +3,10 @@ package com.s23010166.helplink;
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
-import android.view.View;
+
 import android.widget.ImageView;
 
-public class Notification extends AppCompatActivity {
+public class NotificationActivity extends AppCompatActivity {
 
     private ImageView setting2;
     private ImageView feednav;
@@ -18,12 +18,12 @@ public class Notification extends AppCompatActivity {
 
         setting2 = findViewById(R.id.setting2);
         setting2.setOnClickListener(view -> {
-            Intent intent = new Intent(Notification.this, Settings.class);
+            Intent intent = new Intent(NotificationActivity.this, Settings.class);
             startActivity(intent);
         });
         feednav = findViewById(R.id.feednav);
         feednav.setOnClickListener(view -> {
-            Intent intent = new Intent(Notification.this, FeedActivity.class);
+            Intent intent = new Intent(NotificationActivity.this, FeedActivity.class);
             startActivity(intent);
         });
     }

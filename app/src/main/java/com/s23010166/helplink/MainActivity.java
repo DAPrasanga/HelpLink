@@ -1,6 +1,5 @@
 package com.s23010166.helplink;
 
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -16,11 +15,14 @@ public class MainActivity extends AppCompatActivity {
     private Button loginBtn, facebookBtn, googleBtn;
     private TextView forgotPassword, registerLink;
 
+    private DatabaseHelper dbHelper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        dbHelper = new DatabaseHelper(this);
         emailInput = findViewById(R.id.emailInput);
         passwordInput = findViewById(R.id.passwordInput);
         loginBtn = findViewById(R.id.loginBtn);
@@ -30,36 +32,35 @@ public class MainActivity extends AppCompatActivity {
         registerLink = findViewById(R.id.registerLink);
 
         loginBtn.setOnClickListener(view -> {
-            String email = emailInput.getText().toString();
-            String password = passwordInput.getText().toString();
+            String email = emailInput.getText().toString().trim();
+            String password = passwordInput.getText().toString().trim();
+
             if (email.isEmpty() || password.isEmpty()) {
                 Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
             } else {
-                // TODO: Implement login logic
-                Toast.makeText(this, "Logging in...", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(MainActivity.this, FeedActivity.class);
-                startActivity(intent);
-                finish();
+                if (dbHelper.loginUser(email, password)) {
+                    Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(MainActivity.this,FeedActivity.class));
+                    finish();
+                } else {
+                    Toast.makeText(this, "Invalid email or password", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
-        registerLink.setOnClickListener(view -> {
-            Intent intent = new Intent(MainActivity.this, Register.class);
-            startActivity(intent);
+        setClickListener(registerLink,RegisterActivity.class, null);
+        setClickListener(forgotPassword, Forgotpw.class, null);
+        setClickListener(facebookBtn, null, "Facebook login coming soon");
+        setClickListener(googleBtn, null, "Google login coming soon");
+    }
+
+    private void setClickListener(View view, Class<?> activityClass, String message) {
+        view.setOnClickListener(v -> {
+            if (activityClass != null) {
+                startActivity(new Intent(MainActivity.this, activityClass));
+            } else if (message != null) {
+                Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
+            }
         });
-
-        forgotPassword.setOnClickListener( View -> {
-            Intent intent = new Intent(MainActivity.this, Forgotpw.class);
-            startActivity(intent);
-        });
-
-        facebookBtn.setOnClickListener(view ->
-                Toast.makeText(this, "Facebook login coming soon", Toast.LENGTH_SHORT).show()
-        );
-
-        googleBtn.setOnClickListener(view ->
-                Toast.makeText(this, "Google login coming soon", Toast.LENGTH_SHORT).show()
-        );
     }
 }
-

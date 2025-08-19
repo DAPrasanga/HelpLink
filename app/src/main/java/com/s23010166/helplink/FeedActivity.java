@@ -7,6 +7,8 @@ import android.widget.ImageView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class FeedActivity extends AppCompatActivity {
 
     private Button donateButton;
@@ -15,6 +17,7 @@ public class FeedActivity extends AppCompatActivity {
     private ImageView nav_camera;
     private ImageView navNearby;
     private ImageView profile;
+    private FloatingActionButton fabAddPost;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,12 +25,13 @@ public class FeedActivity extends AppCompatActivity {
         setContentView(R.layout.activity_feed);
 
         donateButton = findViewById(R.id.btnDonate);
-        donateButton.setOnClickListener(view ->
-                Toast.makeText(FeedActivity.this, "Thank you for your kindness!", Toast.LENGTH_SHORT).show()
-        );
+        donateButton.setOnClickListener(view ->{
+                Intent intent = new Intent(FeedActivity.this, DonateActivity.class);
+                startActivity(intent);
+        });
         notify = findViewById(R.id.notify);
         notify.setOnClickListener(view -> {
-            Intent intent = new Intent(FeedActivity.this, Notification.class);
+            Intent intent = new Intent(FeedActivity.this, NotificationActivity.class);
             startActivity(intent);
         });
         setting1 = findViewById(R.id.setting1);
@@ -50,5 +54,11 @@ public class FeedActivity extends AppCompatActivity {
             Intent intent = new Intent(FeedActivity.this, DonorProfile.class);
             startActivity(intent);
         });
+        fabAddPost = findViewById(R.id.fabAddPost);
+        fabAddPost.setOnClickListener(view -> {
+            Intent intent = new Intent(FeedActivity.this, CreateActivity.class);
+            startActivity(intent);
+        });
+
     }
 }

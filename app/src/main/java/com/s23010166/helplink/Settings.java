@@ -61,12 +61,12 @@ public class Settings extends AppCompatActivity {
         layoutChangePassword = findViewById(R.id.layout_change_password);
         feed = findViewById(R.id.feed);
         feed.setOnClickListener(view -> {
-            Intent intent = new Intent(Settings.this, FeedActivity.class);
+            Intent intent = new Intent(Settings.this,FeedActivity.class);
             startActivity(intent);
         });
         notify1 = findViewById(R.id.notify1);
         notify1.setOnClickListener(view -> {
-            Intent intent = new Intent(Settings.this, Notification.class);
+            Intent intent = new Intent(Settings.this, NotificationActivity.class);
             startActivity(intent);
         });
     }

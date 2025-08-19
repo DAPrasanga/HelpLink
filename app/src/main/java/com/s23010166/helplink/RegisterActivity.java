@@ -6,17 +6,22 @@ import android.os.Bundle;
 import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Register extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity {
 
     private EditText fullName, email, phone, password, confirmPassword;
     private RadioGroup accountTypeGroup;
     private RadioButton radioDonor, radioRecipient;
     private Button registerButton;
+    private DatabaseHelper dbHelper;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+        dbHelper = new DatabaseHelper(this);
+
 
         fullName = findViewById(R.id.fullName);
         email = findViewById(R.id.email);
@@ -53,12 +58,17 @@ public class Register extends AppCompatActivity {
 
             String accountType = (selectedId == R.id.radioDonor) ? "Donor" : "Recipient";
 
-            Toast.makeText(this, "Account created as " + accountType, Toast.LENGTH_SHORT).show();
+            boolean success = dbHelper.registerUser(mail, pass);
 
-            // Navigate to login (MainActivity)
-            Intent intent = new Intent(Register.this, MainActivity.class);
-            startActivity(intent);
-            finish();
+            if (success) {
+                Toast.makeText(this, "Account created as " + accountType, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            } else {
+                Toast.makeText(this, "Email already exists. Please login.", Toast.LENGTH_SHORT).show();
+            }
+
         });
     }
 }

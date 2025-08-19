@@ -242,7 +242,7 @@
                 <!-- Receipt Button -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cv_receipt"
-                    android:layout_width="207dp"
+                    android:layout_width="215dp"
                     android:layout_height="match_parent"
                     android:layout_marginEnd="8dp"
                     android:layout_weight="1"
@@ -290,21 +290,21 @@
                     android:foreground="?android:attr/selectableItemBackground">
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:padding="12dp"
+                        android:layout_width="178dp"
+                        android:layout_height="match_parent"
+                        android:background="#D1ECF1"
                         android:gravity="center"
-                        android:background="#D1ECF1">
+                        android:orientation="horizontal"
+                        android:padding="12dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginEnd="4dp"
                             android:text="SMS"
                             android:textColor="#0C5460"
                             android:textSize="12sp"
-                            android:textStyle="bold"
-                            android:layout_marginEnd="4dp" />
+                            android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"

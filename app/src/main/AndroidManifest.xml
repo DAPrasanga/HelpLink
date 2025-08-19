@@ -22,30 +22,29 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.HelpLink"
+        android:theme="@style/Theme.HelpLink" 
         tools:targetApi="31">
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            tools:ignore="MissingClass">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Register" />
+
+        <activity android:name=".RegisterActivity"/>
         <activity android:name=".Forgotpw"/>
         <activity android:name=".FeedActivity"/>
-        <activity android:name=".Notification"/>
+        <activity android:name=".NotificationActivity"/>
         <activity android:name=".Settings"/>
         <activity android:name=".CameraActivity"/>
         <activity android:name=".NearbyActivity"/>
         <activity android:name=".DonorProfile"/>
-
     </application>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <meta-data
         android:name="com.google.android.geo.API_KEY"
         android:value="AIzaSyDQo7UYMM6Y-4K28Q2CQReTe442o322t70" />
+
 </manifest>
